@@ -1,0 +1,32 @@
+package program1;
+import java.util.*;
+public class ReversalAlgorithm {
+	static Scanner a;
+	public static void reverse(int[] A, int start,int end) {
+		while (start <= end) 
+	    { 
+	        int temp = A[start];  
+	        A[start] = A[end]; 
+	        A[end] = temp; 
+	        start++; 
+	        end--; 
+	    }
+	}
+	public static void main() {
+		a=new Scanner(System.in);
+		int A[]=new int[100];
+		int i=0;
+		int n=a.nextInt();
+		int d=a.nextInt();
+		for(i=1;i<=n;i++) {
+			A[i]=a.nextInt();
+		}
+		reverse(A,1,d);
+		reverse(A,d+1,n);
+		reverse(A,1,n);
+		for(i=1;i<=n;i++) {
+			System.out.print(A[i]+" ");
+		}
+	}
+
+}
